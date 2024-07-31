@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .header img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            flex: 1;
+            min-width: 220px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            position: relative;
+        }
+        .card h3 {
+            margin: 0 0 10px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+        }
+        .card h3 img {
+            margin-right: 10px;
+        }
+        .card p {
+            margin: 0;
+            color: #777;
+        }
+        .card .change {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            display: flex;
+            align-items: center;
+            color: green;
+        }
+        .card .change img {
+            margin-right: 5px;
+        }
+        .chart {
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome Back</h1>
+           
+        </div>
+        <div class="stats">
+            <div class="card">
+                <h3><img src="icons/users(1).svg" alt=""> <span id="total-users">0</span></h3>
+                <p>Total users</p>
+                <div class="change">
+                    <img src="icons/arrow-up.svg" alt="">
+                    <span id="users-change">0%</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3><img src="icons/users(1).svg" alt=""> <span id="users-per-day">0</span></h3>
+                <p>Users per day</p>
+                <div class="change">
+                    <img src="icons/arrow-up.svg" alt="">
+                    <span id="users-per-day-change">0%</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3><img src="icons/users(1).svg" alt=""> <span id="users-per-week">0</span></h3>
+                <p>Users per week</p>
+                <div class="change">
+                    <img src="icons/arrow-up.svg" alt="">
+                    <span id="users-per-week-change">0%</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3><img src="icons/users(1).svg" alt=""> <span id="users-per-month">0</span></h3>
+                <p>Users per month</p>
+                <div class="change">
+                    <img src="icons/arrow-up.svg" alt="">
+                    <span id="users-per-month-change">0%</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3><img src="icons/users(1).svg" alt=""> <span id="total-products">0</span></h3>
+                <p>Total products</p>
+                <div class="change">
+                    <img src="icons/arrow-up.svg" alt="">
+                    <span id="products-change">0%</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3><img src="icons/users(1).svg" alt=""> <span id="products-per-day">0</span></h3>
+                <p>Products per day</p>
+                <div class="change">
+                    <img src="icons/arrow-up.svg" alt="">
+                    <span id="products-per-day-change">0%</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3><img src="icons/users(1).svg" alt=""> <span id="products-per-week">0</span></h3>
+                <p>Products per week</p>
+                <div class="change">
+                    <img src="icons/arrow-up.svg" alt="">
+                    <span id="products-per-week-change">0%</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3><img src="icons/users(1).svg" alt=""> <span id="products-per-month">0</span></h3>
+                <p>Products per month</p>
+                <div class="change">
+                    <img src="icons/arrow-up.svg" alt="">
+                    <span id="products-per-month-change">0%</span>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="chart">
+            <h2>Users Analytics</h2>
+     
+        </div> -->
+    </div>
+
+    <script>
+        async function fetchData() {
+        
+            const data = {
+                totalUsers: 89.935,
+                usersPerDay: 10.2,
+                usersPerWeek: 71.5,
+                usersPerMonth: 23.283,
+                totalProducts: 89.935,
+                productsPerDay: 10.2,
+                productsPerWeek: 71.5,
+                productsPerMonth: 23.283,
+                usersChange: '+1.01%',
+                usersPerDayChange: '+0.5%',
+                usersPerWeekChange: '+0.7%',
+                usersPerMonthChange: '+1.2%',
+                productsChange: '+1.01%',
+                productsPerDayChange: '+0.5%',
+                productsPerWeekChange: '+0.7%',
+                productsPerMonthChange: '+1.2%'
+            };
+
+            
+            await new Promise(resolve => setTimeout(resolve, 1000));
+
+            document.getElementById('total-users').textContent = data.totalUsers;
+            document.getElementById('users-per-day').textContent = data.usersPerDay;
+            document.getElementById('users-per-week').textContent = data.usersPerWeek;
+            document.getElementById('users-per-month').textContent = data.usersPerMonth;
+            document.getElementById('total-products').textContent = data.totalProducts;
+            document.getElementById('products-per-day').textContent = data.productsPerDay;
+            document.getElementById('products-per-week').textContent = data.productsPerWeek;
+            document.getElementById('products-per-month').textContent = data.productsPerMonth;
+
+            document.getElementById('users-change').textContent = data.usersChange;
+            document.getElementById('users-per-day-change').textContent = data.usersPerDayChange;
+            document.getElementById('users-per-week-change').textContent = data.usersPerWeekChange;
+            document.getElementById('users-per-month-change').textContent = data.usersPerMonthChange;
+            document.getElementById('products-change').textContent = data.productsChange;
+            document.getElementById('products-per-day-change').textContent = data.productsPerDayChange;
+            document.getElementById('products-per-week-change').textContent = data.productsPerWeekChange;
+            document.getElementById('products-per-month-change').textContent = data.productsPerMonthChange;
+        }
+
+        fetchData();
+
+        setInterval(fetchData, 10000); 
+    </script>
+</body>
+</html>
